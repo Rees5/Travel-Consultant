@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Clients</title>
+  <title>Workspace</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -83,34 +83,34 @@
         <img class="logo d-flex align-items-center w-auto" height="120px" src="assets/img/logo.png" alt="">
       </p></center>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link " href="index.php">
           <i class="bi bi-columns-gap"></i>
           <span>Workspace</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="clients.html">
+        <a class="nav-link collapsed" href="clients.php">
           <i class="fa fa-users"></i>
           <span>Clients</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tasks.html">
+        <a class="nav-link collapsed" href="tasks.php">
           <i class="bi bi-list-check"></i>
           <span>Tasks</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="appointment.html">
+        <a class="nav-link collapsed" href="appointment.php">
           <i class="bi bi-calendar-month-fill"></i>
           <span>Appointment</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="case.html">
+        <a class="nav-link collapsed" href="case.php">
           <i class="bi bi-card-list"></i>
           <span>Case</span>
         </a>
@@ -123,56 +123,37 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Clients</h1>
-      <p class="text-muted">Here's the clients list</p>
+      <h1>Your Workspace</h1>
+      <p class="text-muted">Welcome, xxx</p>
     </div><!-- End Page Title -->
     <div class="row">
-      <p style="margin-top:20px;"></p>
-      <div class="col-md-8" style="margin-bottom:20px;">
-        <input type="search" style="font-family: 'Helvetica', FontAwesome, sans-serif;" class="form-control" name="" placeholder="&#xF002;  Search by name, email ...">
-      </div>
+      <p style="margin-top:20px;">Overview</p>
+      <div class="card" style="border-top:15px solid orange !important;">
+            <div class="card-header" style="background:#fbf6eb;font-weight:bold;color:000;"><span style="padding-left:15px">Today's Agenda</span></div>
+            <div class="card-body">
+              <p></p>
+                <p class="card-text" style="padding-left:30px;margin-top:50px;margin-bottom:70px">
+                    You don't have any event schedule for today. <span style="color: #ddaa33">Add</span>
+                </p>
+            </div>
+        </div>
+        <div class="card" style="border-top:15px solid orange !important;">
+              <div class="card-header" style="background:#fbf6eb;"><span style="padding-left:15px;;color:000;font-weight:bold;">Task that are due</span><span class="pull-right" style="margin-right:85px;color: #ddaa33">View Task Report <i class="bi bi-arrow-right"></i></span></div>
+              <div class="card-body">
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Residential Address</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th >Rees Alumasa</th>
-            <td>reesalumasa@gmail.com</td>
-            <td>0792756002</td>
-            <td>Madaraka Estate</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th >Rees Alumasa</th>
-            <td>reesalumasa@gmail.com</td>
-            <td>0792756002</td>
-            <td>Madaraka Estate</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th >Rees Alumasa</th>
-            <td>reesalumasa@gmail.com</td>
-            <td>0792756002</td>
-            <td>Madaraka Estate</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th >Rees Alumasa</th>
-            <td>reesalumasa@gmail.com</td>
-            <td>0792756002</td>
-            <td>Madaraka Estate</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+                <div class="row" style="background:#fbf6eb; margin:15px;padding:20px;">
+                  <p><b>Follow up with</b> <span style="color: #ddaa33">Odusote</span></p>
+                  <div class="col-md-3">
+                    <p>Due on: 1/21/2021</p>
+                  </div>
+                  <div class="col-md-3">
+                    <p>Creatd On: 1/15/2021</p>
+                  </div>
+                </div>
+                  <p class="card-text" style="margin-bottom:70px">
+                  </p>
+              </div>
+          </div>
     </div>
 
 

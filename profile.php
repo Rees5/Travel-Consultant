@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Case</title>
+  <title>Profile</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -83,97 +83,137 @@
         <img class="logo d-flex align-items-center w-auto" height="120px" src="assets/img/logo.png" alt="">
       </p></center>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-columns-gap"></i>
           <span>Workspace</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="clients.html">
+        <a class="nav-link" href="clients.php">
           <i class="fa fa-users"></i>
           <span>Clients</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tasks.html">
+        <a class="nav-link collapsed" href="tasks.php">
           <i class="bi bi-list-check"></i>
           <span>Tasks</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="appointment.html">
+        <a class="nav-link collapsed" href="appointment.php">
           <i class="bi bi-calendar-month-fill"></i>
           <span>Appointment</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="case.html">
+        <a class="nav-link collapsed" href="case.php">
           <i class="bi bi-card-list"></i>
           <span>Case</span>
         </a>
       </li>
 
     </ul>
-
+ 
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Case Note</h1>
-      <p class="text-muted">Create case note</p>
+      <h1>Appointments</h1>
+      <p class="text-muted">Here's your appointments list</p>
     </div><!-- End Page Title -->
     <div class="row">
       <p style="margin-top:20px;"></p>
+      <div class="col-md-8" style="margin-bottom:20px;">
+        <input type="search" style="font-family: 'Helvetica', FontAwesome, sans-serif;" class="form-control" name="" placeholder="&#xF002;  Search...">
+      </div>
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"></h5>
 
-          <form class="row">
-            <div class="col-md-5 mb-3" style="margin-right:5px">
-              <label for="inputEmail5" class="form-label">Client's Name</label>
-              <input type="email" class="form-control" id="inputEmail5">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="inputEmail5" class="form-label">Next Appointment</label>
-              <input type="email" class="form-control" id="inputEmail5">
-            </div>
-            <div class="col-md-5 mb-3" style="margin-right:5px">
-              <label for="inputEmail5" class="form-label">To Do List by Client</label>
-              <input type="email" class="form-control" id="inputEmail5">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="inputEmail5" class="form-label">To Do List by Client</label>
-              <select class="form-select" multiple aria-label="multiple select example">
-                <option value="1">Verify Passport Documents <i class="bi bi-x-circle"  style="color:red;"></i></option>
-                <option value="2">Verify Passport Documents <i class="bi bi-x-circle"  style="color:red;"></i></option>
-                <option value="3">Verify Passport Documents <i class="bi bi-x-circle"  style="color:red;"></i></option>
-                <option value="4">Verify Passport Documents <i class="bi bi-x-circle"  style="color:red;"></i></option>
-              </select>
-            </div>
-            <div class="col-md-5 mb-3" style="margin-right:5px">
-              <label for="inputEmail5" class="form-label">To Do List by Consultant</label>
-              <input type="email" class="form-control" id="inputEmail5">
-            </div>
-            <div class="col-6 mb-3">
-              <label for="inputEmail5" class="form-label">To Do List by Consultant</label>
-              <select class="form-select" multiple aria-label="multiple select example">
-                <option value="1">Verify Passport Documents <i class="bi bi-x-circle"  style="color:red;"></i></option>
-              </select>
-            </div>
-            <div class="col-md-5 mb-3" style="margin-right:5px">
-              <label for="inputEmail5" class="form-label">Advice</label>
-              <textarea class="form-control" style="height: 100px"></textarea>
-            </div>
+          <!-- Pills Tabs -->
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="border-bottom:1px solid silver;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">All Status</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Fulfilled</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pending</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Cancelled</button>
+            </li>
+          </ul>
+          <div class="tab-content pt-2" id="myTabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="home-tab">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Clients Name</th>
+                    <th scope="col">Appointment Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Rees Alumasa</th>
+                    <td>2/1/2021</td>
+                    <td>12:15</td>
+                    <td><span style="border-radius:0;padding: 2px 30px;background:#fbf6eb;color: #ddaa33;">Pending</span></td>
+                    <td>
+                      <span>
+                        <span class="nav-item dropdown pe-3">
+                          <i  data-bs-toggle="dropdown" style="cursor:pointer" class="bi bi-three-dots-vertical"></i>
 
-            <div class="col-md-6 mt-5">
-              <button type="submit" class="btn btn-primary pull-right">Save</button>
-            </div>
-          </form>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li>
+                          <a class="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                            <span>Edit</span>
+                          </a>
+                        </li>
 
+
+                      </ul>
+                      </span></td>
+                  </tr>
+                  <tr>
+                    <th>Laureen Magomere</th>
+                    <td>2/1/2021</td>
+                    <td>04:30</td>
+                    <td><span style="border-radius:0;padding: 2px 30px;background:#fbf6eb;color: red;">Cancelled</span></td>
+                    <td><span>
+                      <span class="nav-item dropdown pe-3">
+                        <i  data-bs-toggle="dropdown" style="cursor:pointer" class="bi bi-three-dots-vertical"></i>
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                      <li>
+                        <a class="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                          <span>Edit</span>
+                        </a>
+                      </li>
+
+
+                    </ul>
+                    </span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
+              Nesciunt totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="contact-tab">
+              Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
+            </div>
+          </div><!-- End Pills Tabs -->
 
         </div>
       </div>

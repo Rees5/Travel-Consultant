@@ -1,4 +1,5 @@
 <?php
+if(!isset($_SESSION)) {session_start();}
 $url = "https://api-stg.jonathankingcrm.com/api/";
 $ch = curl_init();
 
@@ -20,7 +21,14 @@ function login($email,$password){
   if ($err) {
     return "cURL Error #:" . $err;
   } else {
+    $sess=json_decode($response, true);
+    if($sess['message']=="login successful"){
+      $data = (array) $sess;
+      print_r($data);
+      $_SESSION['login']==$data;
+    }
     return $response;
+
   }
 }
 
@@ -176,7 +184,7 @@ function fetchCaseNote($token,$caseID){
 
 
 
-$token='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMmJiZjdlZjIxOGVhMTRiMzhmZjRiMyIsImZpcnN0TmFtZSI6IkNvbnN1bGFyIiwibGFzdE5hbWUiOiJHZW5lcmFsIiwiZW1haWwiOiJhbm9uYWJiZXlAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpYXQiOjE2MTQyMzQ4OTEsImV4cCI6MTYxNTA5ODg5MX0.QTsZef4uI186tc4DgfF9WmHwEkdeNrx74MHA6MBmtEc';
-echo fetchCaseNote($token,'603e297c07fb3a3afdf5b831');
+//$token='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMmJiZjdlZjIxOGVhMTRiMzhmZjRiMyIsImZpcnN0TmFtZSI6IkNvbnN1bGFyIiwibGFzdE5hbWUiOiJHZW5lcmFsIiwiZW1haWwiOiJhbm9uYWJiZXlAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpYXQiOjE2MTQyMzQ4OTEsImV4cCI6MTYxNTA5ODg5MX0.QTsZef4uI186tc4DgfF9WmHwEkdeNrx74MHA6MBmtEc';
+//echo fetchCaseNote($token,'603e297c07fb3a3afdf5b831');
 //echo changePassword($token,'$oldPassword','$password','$confirmPassword')
 ?>

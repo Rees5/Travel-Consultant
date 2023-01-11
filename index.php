@@ -60,12 +60,12 @@
                   </div>
 
 
-                  <form class="row g-3 needs-validation" action="index.html" novalidate>
+                  <form class="row g-3 needs-validation" action="#" id="login_form" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="email" class="form-control" id="yourUsername" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
@@ -73,7 +73,11 @@
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="text" name="login" value="login" hidden>
                       <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+                    <div class="col-12 mt-3">
+                      <p id="results"></p>
                     </div>
                     <div class="col-12 mt-3">
                       <button class="btn btn-primary w-100" type="submit">Login</button>
@@ -95,6 +99,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.umd.js"></script>
@@ -106,6 +111,31 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript">
+  $('#login_form').on('submit', function (e) {
+              $('#results').html('<div class="spinner-border text-primary m-1" role="status"> <span class="sr-only"></span></div>');
+              e.preventDefault();
+
+              $.ajax({
+                type: 'post',
+                url: 'src/ajax.php',
+                data: $('#login_form').serialize(),
+                success: function (data) {
+
+                  data=JSON.parse(data);
+                  console.log(data);
+                  if(data.message=="login successful"){
+                    $('#results').html("<span class='text-success'>"+data.message+"</span>");
+                  }else {
+                    $('#results').html("<span class='text-danger'>"+data.message+"</span>");
+                  }
+
+                }
+              });
+
+            });
+  </script>
 
 </body>
 

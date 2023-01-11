@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Profile</title>
+  <title>Tasks</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -83,48 +83,48 @@
         <img class="logo d-flex align-items-center w-auto" height="120px" src="assets/img/logo.png" alt="">
       </p></center>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-columns-gap"></i>
           <span>Workspace</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="clients.html">
+        <a class="nav-link collapsed" href="clients.php">
           <i class="fa fa-users"></i>
           <span>Clients</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tasks.html">
+        <a class="nav-link" href="tasks.php">
           <i class="bi bi-list-check"></i>
           <span>Tasks</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="appointment.html">
+        <a class="nav-link collapsed" href="appointment.php">
           <i class="bi bi-calendar-month-fill"></i>
           <span>Appointment</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="case.html">
+        <a class="nav-link collapsed" href="case.php">
           <i class="bi bi-card-list"></i>
           <span>Case</span>
         </a>
       </li>
 
     </ul>
- 
+
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Appointments</h1>
-      <p class="text-muted">Here's your appointments list</p>
+      <h1>Tasks</h1>
+      <p class="text-muted">Here's your tasks list</p>
     </div><!-- End Page Title -->
     <div class="row">
       <p style="margin-top:20px;"></p>
@@ -141,13 +141,16 @@
               <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">All Status</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Fulfilled</button>
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Not Started</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pending</button>
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Completed</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Cancelled</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Declined</button>
             </li>
           </ul>
           <div class="tab-content pt-2" id="myTabContent">
@@ -155,19 +158,21 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Clients Name</th>
-                    <th scope="col">Appointment Date</th>
-                    <th scope="col">Time</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Date Created</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Priority</th>
                     <th scope="col">Status</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>Rees Alumasa</th>
+                    <th>Schedule Training</th>
                     <td>2/1/2021</td>
-                    <td>12:15</td>
-                    <td><span style="border-radius:0;padding: 2px 30px;background:#fbf6eb;color: #ddaa33;">Pending</span></td>
+                    <td>15/1/2021</td>
+                    <td><span style="border-radius:0;padding: 2px 30px;background:#fbf6eb;color: #ddaa33;">High</span></td>
+                    <td>Not Started</td>
                     <td>
                       <span>
                         <span class="nav-item dropdown pe-3">
@@ -185,10 +190,11 @@
                       </span></td>
                   </tr>
                   <tr>
-                    <th>Laureen Magomere</th>
+                    <th>Schedule Training</th>
                     <td>2/1/2021</td>
-                    <td>04:30</td>
-                    <td><span style="border-radius:0;padding: 2px 30px;background:#fbf6eb;color: red;">Cancelled</span></td>
+                    <td>15/1/2021</td>
+                    <td><span style="border-radius:0;padding: 2px 30px;background:#fbf6eb;color: red;">Urgent</span></td>
+                    <td>Complete</td>
                     <td><span>
                       <span class="nav-item dropdown pe-3">
                         <i  data-bs-toggle="dropdown" style="cursor:pointer" class="bi bi-three-dots-vertical"></i>
@@ -226,14 +232,15 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-8">
-                <p><b>Update Appointments</b></p>
+                <p><b>Update Task Progress</b></p>
                 <p></p>
-                <p style="color: #ddaa33">Rees Alumasa</p>
+                <p>Schedule training</p>
                 <p>Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in facere consequatur sit dolor ipsum.</p>
               </div>
-              <div class="col-md-4" style="padding:5px">
-                <p><i class="bi bi-alarm"></i> <span  class="pull-right">10:45</span></p>
-                <p><i class="fa fa-calendar"></i> <span  class="pull-right">1/4/2021</span></p>
+              <div class="col-md-4 pull-right" style="padding:5px">
+                <button class="btn btn-danger pull-right" name="button">Urgent</button>
+                <p class="pull-right" style="color:brown">Due On:1/4/2021</p>
+                <p class="pull-right">Created:1/4/2021</p>
               </div>
 
             </div>
@@ -241,9 +248,9 @@
               <div class="col-md-8">
                 <p>Change Status</p>
                 <select class="form-select">
-                  <option value="1">Fulfilled</option>
-                  <option value="2">Pending</option>
-                  <option value="3">Cancelled</option>
+                  <option value="1">Started</option>
+                  <option value="2">On Going</option>
+                  <option value="3">Completed</option>
                 </select>
               </div>
 

@@ -83,34 +83,34 @@
         <img class="logo d-flex align-items-center w-auto" height="120px" src="assets/img/logo.png" alt="">
       </p></center>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-columns-gap"></i>
           <span>Workspace</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="clients.html">
+        <a class="nav-link collapsed" href="clients.php">
           <i class="fa fa-users"></i>
           <span>Clients</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tasks.html">
+        <a class="nav-link collapsed" href="tasks.php">
           <i class="bi bi-list-check"></i>
           <span>Tasks</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="appointment.html">
+        <a class="nav-link" href="appointment.php">
           <i class="bi bi-calendar-month-fill"></i>
           <span>Appointment</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="case.html">
+        <a class="nav-link collapsed" href="case.php">
           <i class="bi bi-card-list"></i>
           <span>Case</span>
         </a>
