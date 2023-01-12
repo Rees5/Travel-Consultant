@@ -1,3 +1,14 @@
+<?php
+include 'src/functions.php';
+if(!isset($_SESSION)) {session_start();}
+if (isset($_SESSION['login'])) {
+  $details = $_SESSION['login'];
+  $user= $details['user'];
+  $name =$user['firstName']." ".$user['lastName'];
+} else {
+  die("<script>window.location = './';</script>");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +47,9 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
-
+    <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -55,20 +68,43 @@
           </a><!-- End Notification Icon -->
 
         </li><!-- End Notification Nav -->
-        <li class="nav-item pe-3">
+        <li class="nav-item dropdown pe-3">
 
-          <a class="nav-links" href="#">
-            <span class="d-none d-md-block ps-2">Kelin</span>
-
-          </a><!-- End Profile Iamge Icon -->
-        </li>
-        <li class="nav-item pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <span class="d-none d-md-block dropdown-toggle ps-2"><?=$user['firstName'] ?></span>
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-
           </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6><?=$name?></h6>
+              <span><?=$user['role']?></span><br>
+              <span><?=$user['email']?></span><br>
+              <span><?=$user['phone']?></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#!">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="src/logout.php">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
         </li><!-- End Profile Nav -->
+
 
       </ul>
     </nav><!-- End Icons Navigation -->
@@ -124,7 +160,11 @@
 
     <div class="pagetitle">
       <h1>Your Workspace</h1>
-      <p class="text-muted">Welcome, xxx</p>
+      <pre>
+      <?php //print_r($details); ?>
+      </pre>
+      <p class="text-muted">Welcome, <?=$name?></p>
+      <?php //print_r(json_decode(fetchCaseNotes($details['token']))); ?>
     </div><!-- End Page Title -->
     <div class="row">
       <p style="margin-top:20px;">Overview</p>

@@ -23,9 +23,9 @@ function login($email,$password){
   } else {
     $sess=json_decode($response, true);
     if($sess['message']=="login successful"){
-      $data = (array) $sess;
-      print_r($data);
-      $_SESSION['login']==$data;
+      $data = (array) $sess['data'];
+      if(!isset($_SESSION)) {session_start();}
+      $_SESSION['login']=$data;
     }
     return $response;
 

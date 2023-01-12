@@ -1,3 +1,9 @@
+<?php
+  if(!isset($_SESSION)) {session_start();}
+  if (isset($_SESSION['login'])) {
+    die("<script>window.location = 'workspace.php';</script>");
+  }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,6 +133,7 @@
                   console.log(data);
                   if(data.message=="login successful"){
                     $('#results').html("<span class='text-success'>"+data.message+"</span>");
+                    die("<script>window.location = 'workspace.php';</script>");
                   }else {
                     $('#results').html("<span class='text-danger'>"+data.message+"</span>");
                   }
