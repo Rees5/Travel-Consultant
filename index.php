@@ -133,7 +133,7 @@
                   console.log(data);
                   if(data.message=="login successful"){
                     $('#results').html("<span class='text-success'>"+data.message+"</span>");
-                    die("<script>window.location = 'workspace.php';</script>");
+                    window.location = 'workspace.php';
                   }else {
                     $('#results').html("<span class='text-danger'>"+data.message+"</span>");
                   }
